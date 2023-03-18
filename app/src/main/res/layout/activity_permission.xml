@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PermissionActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="25dp"
+        android:layout_marginTop="100dp">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_gravity="center"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/ic_launcher"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Permission Request"
+            android:layout_gravity="center"
+            android:textSize="24sp"
+            android:layout_marginTop="12dp"
+            android:fontFamily="sans-serif-condensed"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Please allow the permissions required to run this app."
+            android:layout_gravity="center"
+            android:layout_marginTop="30dp"/>
+
+
+        <Button
+            android:id="@+id/grnt_per"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/round_button_gradient"
+            android:textColor="#FFFFFF"
+            android:text="GRANT PERMISSION"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:layout_marginTop="150dp"/>
+
+
+    </LinearLayout>
+
+
+
+    <ImageButton
+        android:id="@+id/help"
+        android:onClick="help"
+        android:background="@drawable/ic_help"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"/>
+
+    <!-- <ImageButton
+        android:id="@+id/imageButton_info"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="5dp"
+        android:layout_marginBottom="4dp"
+        android:background="@drawable/ic_info"
+        android:onClick="info" /> -->
+
+
+</RelativeLayout>

@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">The Safety App</string>
+    <string name="textView_MainActivity">ENTER YOUR DETAILS</string>
+    <string name="textView_LoginActivity">Login</string>
+    <string name="editDetails">Edit Details</string>
+    <string name="textView_SecondaryActivity">Touch the location icon below to send your location to your emergency contact</string>
+    <string name="textView_EditDetails">EDIT YOUR DETAILS</string>
+</resources>
