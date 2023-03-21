@@ -5,83 +5,73 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".SecondaryActivity"
-    android:orientation="vertical">
+    android:background="@color/BlackSPL">
 
 
-    <ImageView
-        android:id="@+id/scndryHeader"
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="300dp"
+            android:layout_height="160dp"
+            android:layout_marginTop="80dp"
+            android:paddingHorizontal="35dp"
+            android:layout_centerHorizontal="true"
+            android:background="@android:color/transparent"
+            android:text="@string/textView_SecondaryActivity"
+            android:textAlignment="center"
+            android:fontFamily="@font/poppinsr"
+            android:textColor="@color/White"
+            android:textSize="23sp"
+            android:textStyle="bold" />
+
+    <com.skyfishjy.library.RippleBackground
+        android:id="@+id/ripple_bg"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/BlackSPL"/>
+        android:layout_centerInParent="true"
+        app:rb_color="@color/textgrey"
+        app:rb_radius="32dp"
+        app:rb_rippleAmount="4"
+        app:rb_scale="6">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center"
+            android:layout_margin="75dp"
+            android:layout_centerInParent="true"
+            android:backgroundTint="@color/White"
+            app:cardCornerRadius="60dp">
 
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@android:color/transparent"
-        android:gravity="center_horizontal"
-        android:orientation="vertical">
-
-                <TextView
-                    android:id="@+id/textView"
-                    android:layout_width="300dp"
-                    android:layout_height="160dp"
-                    android:layout_marginTop="80dp"
-                    android:paddingHorizontal="35dp"
-                    android:background="@android:color/transparent"
-                    android:text="@string/textView_SecondaryActivity"
-                    android:textAlignment="center"
-                    android:fontFamily="@font/poppinsr"
-                    android:textColor="@color/White"
-                    android:textSize="23sp"
-                    android:textStyle="bold" />
-
-        <com.skyfishjy.library.RippleBackground
-            android:id="@+id/ripple_bg"
-            android:layout_width="250dp"
-            android:layout_height="250dp"
-            app:rb_color="@color/textgrey"
-            app:rb_radius="32dp"
-            app:rb_rippleAmount="4"
-            app:rb_scale="6">
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+            <ToggleButton
+                android:id="@+id/toggleButton"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
                 android:layout_gravity="center"
-                android:layout_margin="75dp"
-                android:backgroundTint="@color/White"
-                app:cardCornerRadius="60dp">
+                android:background="@drawable/ic_location"
+                android:onClick="toggle"
+                android:textOff=""
+                android:textOn="" />
 
 
-                <ToggleButton
-                    android:id="@+id/toggleButton"
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
-                    android:layout_gravity="center"
-                    android:background="@drawable/ic_location"
-                    android:onClick="toggle"
-                    android:textOff=""
-                    android:textOn="" />
-
-
-            </androidx.cardview.widget.CardView>
-        </com.skyfishjy.library.RippleBackground>
+        </androidx.cardview.widget.CardView>
+    </com.skyfishjy.library.RippleBackground>
 
         <Button
             android:id="@+id/imageButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
             android:text="@string/editDetails"
             android:fontFamily="@font/poppinsr"
             android:textSize="13sp"
-            android:layout_marginTop="7dp"
             android:paddingHorizontal="20dp"
+            android:layout_marginBottom="150dp"
             android:textColor="@color/BlackSPL"
             android:background="@drawable/roundtnwhite"
             android:onClick="settings" />
 
-    </LinearLayout>
 
 
 </RelativeLayout>

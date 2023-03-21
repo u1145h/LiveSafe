@@ -10,6 +10,7 @@ import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentSender;
+import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Color;
@@ -89,7 +90,7 @@ public class SecondaryActivity extends AppCompatActivity {
         //imageButton = (ImageButton) findViewById(R.id.imageButton);
         //dev_info = (ImageButton)findViewById(R.id.dev_info);
         textView = (TextView) findViewById(R.id.textView);
-        rippleBackground = (RippleBackground)findViewById(R.id.ripple_bg);
+        rippleBackground = (RippleBackground) findViewById(R.id.ripple_bg);
 
 
         check();
@@ -98,17 +99,11 @@ public class SecondaryActivity extends AppCompatActivity {
     }
 
 
-
-
-
-    public void toggle(View v)
-    {
-        if (toggleButton.isChecked())
-        {
+    public void toggle(View v) {
+        if (toggleButton.isChecked()) {
             Toast.makeText(this, "On", Toast.LENGTH_SHORT).show();
 
-            if (flag == 0)
-            {
+            if (flag == 0) {
                 TimerTask timerTask = new TimerTask() {
                     @Override
                     public void run() {
@@ -124,16 +119,14 @@ public class SecondaryActivity extends AppCompatActivity {
                         });
                     }
                 };
-                timer.schedule(timerTask,0,60000);
+                timer.schedule(timerTask, 0, 60000);
             }
 
             textView.setText("Touch the icon again to Stop sending your location");
             rippleBackground.startRippleAnimation();
 
 
-        }
-        else
-        {
+        } else {
             textView.setText("Touch the location icon below to send your location to your emergency contact");
             flag = 1;
             timer.cancel();
@@ -143,8 +136,7 @@ public class SecondaryActivity extends AppCompatActivity {
 
     }
 
-    public void info(View v)
-    {
+    public void info(View v) {
         dialog = new Dialog(this);
 
         dialog.setContentView(R.layout.developer_dialog);
@@ -153,8 +145,7 @@ public class SecondaryActivity extends AppCompatActivity {
         dialog.show();
     }
 
-    protected void checkForGPS()
-    {
+    protected void checkForGPS() {
         //check if gps is enabled or not and then request user to enable it.
         LocationRequest locationRequest = LocationRequest.create();
         locationRequest.setInterval(10000);
@@ -177,8 +168,7 @@ public class SecondaryActivity extends AppCompatActivity {
             public void onFailure(@NonNull Exception e) {
 
                 Toast.makeText(SecondaryActivity.this, "Turn on GPS.", Toast.LENGTH_LONG).show();
-                if(e instanceof ResolvableApiException)
-                {
+                if (e instanceof ResolvableApiException) {
                     ResolvableApiException resolvable = (ResolvableApiException) e;
                     try {
                         resolvable.startResolutionForResult(SecondaryActivity.this, 51);
@@ -191,23 +181,20 @@ public class SecondaryActivity extends AppCompatActivity {
     }
 
 
-    protected void sendMessage()
-    {
-        String encd_url = "https://www.google.com/maps/search/?api=1&query="+latitude+","+longitude;
+    protected void sendMessage() {
+        String encd_url = "https://www.google.com/maps/search/?api=1&query=" + latitude + "," + longitude;
         try {
             url = new URL(encd_url);
         } catch (MalformedURLException e) {
             e.printStackTrace();
         }
         SmsManager smsManager = SmsManager.getDefault();
-        smsManager.sendTextMessage(phone_no, null, message+url, null, null);
+        smsManager.sendTextMessage(phone_no, null, message + url, null, null);
     }
 
 
-
-    public void settings(View v)
-    {
-        Intent intent=new Intent(SecondaryActivity.this,LoginActivity.class);
+    public void settings(View v) {
+        Intent intent = new Intent(SecondaryActivity.this, LoginActivity.class);
         SecondaryActivity.this.startActivity(intent);
     }
 
@@ -219,69 +206,79 @@ public class SecondaryActivity extends AppCompatActivity {
 
     /*****************************************/
     //to check if the database is empty or not.
-    public void check()
-    {
+    public void check() {
         String string = "";
-        Cursor cursor=db.rawQuery("SELECT * FROM USER_DETAILS",null);
+        Cursor cursor = db.rawQuery("SELECT * FROM USER_DETAILS", null);
         cursor.moveToFirst();
-        while (cursor.isAfterLast()==false)
-        {
+        while (cursor.isAfterLast() == false) {
             /************/
             /*To get the phone number and the message*/
             phone_no = cursor.getString(2);
-            message = cursor.getString(1)+" might be in danger. Here's the last location";
+            message = cursor.getString(1) + " might be in danger. Here's the last location";
             /************/
-            string += "\n"+cursor.getString(0)+cursor.getString(1)+cursor.getString(2);
+            string += "\n" + cursor.getString(0) + cursor.getString(1) + cursor.getString(2);
             cursor.moveToNext();
         }
         cursor.close();
-        if (string.length()==0)
-        {
-            Intent intent1=new Intent(SecondaryActivity.this,MainActivity.class);
+        if (string.length() == 0) {
+            Intent intent1 = new Intent(SecondaryActivity.this, MainActivity.class);
             SecondaryActivity.this.startActivity(intent1);
         }
     }
 
-    private void fetchLocation()
-    {
-            fusedLocationProviderClient.getLastLocation().addOnCompleteListener(new OnCompleteListener<Location>() {
-                @Override
-                public void onComplete(@NonNull Task<Location> task) {
-                    if (task.isSuccessful())
-                    {
-                        lastKnownLocation = task.getResult();
-                        if (lastKnownLocation != null)
-                        {
-                            latitude = lastKnownLocation.getLatitude();
-                            longitude = lastKnownLocation.getLongitude();
-                            sendMessage();
-                        }
-                        else
-                        {
-                            final LocationRequest locationRequest = LocationRequest.create();
-                            locationRequest.setInterval(10000);
-                            locationRequest.setFastestInterval(5000);
-                            locationRequest.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
-                            locationCallback = new LocationCallback()
-                            {
-                                @Override
-                                public void onLocationResult(LocationResult locationResult) {
-                                    super.onLocationResult(locationResult);
-                                    if (locationResult == null)
-                                    {
-                                        return;
-                                    }
-                                    lastKnownLocation = locationResult.getLastLocation();
-                                    latitude = lastKnownLocation.getLatitude();
-                                    longitude = lastKnownLocation.getLongitude();
-                                    fusedLocationProviderClient.removeLocationUpdates(locationCallback);
+    private void fetchLocation() {
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            // TODO: Consider calling
+            //    ActivityCompat#requestPermissions
+            // here to request the missing permissions, and then overriding
+            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+            //                                          int[] grantResults)
+            // to handle the case where the user grants the permission. See the documentation
+            // for ActivityCompat#requestPermissions for more details.
+            return;
+        }
+        fusedLocationProviderClient.getLastLocation().addOnCompleteListener(new OnCompleteListener<Location>() {
+            @Override
+            public void onComplete(@NonNull Task<Location> task) {
+                if (task.isSuccessful()) {
+                    lastKnownLocation = task.getResult();
+                    if (lastKnownLocation != null) {
+                        latitude = lastKnownLocation.getLatitude();
+                        longitude = lastKnownLocation.getLongitude();
+                        sendMessage();
+                    } else {
+                        final LocationRequest locationRequest = LocationRequest.create();
+                        locationRequest.setInterval(10000);
+                        locationRequest.setFastestInterval(5000);
+                        locationRequest.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
+                        locationCallback = new LocationCallback() {
+                            @Override
+                            public void onLocationResult(LocationResult locationResult) {
+                                super.onLocationResult(locationResult);
+                                if (locationResult == null) {
+                                    return;
                                 }
-                            };
-                            fusedLocationProviderClient.requestLocationUpdates(locationRequest, locationCallback, null);
+                                lastKnownLocation = locationResult.getLastLocation();
+                                latitude = lastKnownLocation.getLatitude();
+                                longitude = lastKnownLocation.getLongitude();
+                                fusedLocationProviderClient.removeLocationUpdates(locationCallback);
+                            }
+                        };
+                        if (ActivityCompat.checkSelfPermission(SecondaryActivity.this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(SecondaryActivity.this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+                            // TODO: Consider calling
+                            //    ActivityCompat#requestPermissions
+                            // here to request the missing permissions, and then overriding
+                            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+                            //                                          int[] grantResults)
+                            // to handle the case where the user grants the permission. See the documentation
+                            // for ActivityCompat#requestPermissions for more details.
+                            return;
                         }
+                        fusedLocationProviderClient.requestLocationUpdates(locationRequest, locationCallback, null);
                     }
                 }
-            });
+            }
+        });
     }
 
 }
