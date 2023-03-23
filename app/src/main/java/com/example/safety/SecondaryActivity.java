@@ -194,7 +194,7 @@ public class SecondaryActivity extends AppCompatActivity {
 
 
     public void settings(View v) {
-        Intent intent = new Intent(SecondaryActivity.this, LoginActivity.class);
+        Intent intent = new Intent(SecondaryActivity.this, UserDetails.class);
         SecondaryActivity.this.startActivity(intent);
     }
 
@@ -204,18 +204,18 @@ public class SecondaryActivity extends AppCompatActivity {
         this.moveTaskToBack(true);
     }
 
-    /*****************************************/
+    //*****************************************//
     //to check if the database is empty or not.
     public void check() {
         String string = "";
         Cursor cursor = db.rawQuery("SELECT * FROM USER_DETAILS", null);
         cursor.moveToFirst();
         while (cursor.isAfterLast() == false) {
-            /************/
+            //************//
             /*To get the phone number and the message*/
             phone_no = cursor.getString(2);
             message = cursor.getString(1) + " might be in danger. Here's the last location";
-            /************/
+            //************//
             string += "\n" + cursor.getString(0) + cursor.getString(1) + cursor.getString(2);
             cursor.moveToNext();
         }

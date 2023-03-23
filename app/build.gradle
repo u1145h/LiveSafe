@@ -31,4 +31,5 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
     implementation 'com.skyfishjy.ripplebackground:library:1.0.1'
     implementation 'com.karumi:dexter:6.0.0'
+    implementation 'androidx.biometric:biometric:1.1.0'
 }

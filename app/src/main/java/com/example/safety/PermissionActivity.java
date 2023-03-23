@@ -32,7 +32,7 @@ import java.util.List;
 public class PermissionActivity extends AppCompatActivity {
 
     Dialog myDialog;
-    private Button grnt_per;
+    Button grnt_per;
     ImageButton help;
     ImageButton info;
 

@@ -4,6 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/userDetails"
+    android:visibility="gone"
     tools:context=".UserDetails">
 
     <ImageView
@@ -62,35 +64,6 @@
 
 
         <TextView
-            android:id="@+id/user_id"
-            android:text="User ID"
-            android:textColor="@color/text"
-            android:textSize="30dp"
-            android:textStyle="bold"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:layout_below="@id/textView_name"/>
-
-
-
-        <TextView
-            android:id="@+id/textView_user_id"
-            android:hint="user_id"
-            android:textSize="25dp"
-            android:textStyle="bold"
-            android:textColor="@color/text"
-            android:textAlignment="viewStart"
-            android:background="@drawable/input_background"
-            android:layout_centerHorizontal="true"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:layout_below="@id/user_id"/>
-
-
-
-        <TextView
             android:id="@+id/e_number"
             android:text="Emergency No"
             android:textColor="@color/text"
@@ -98,8 +71,7 @@
             android:textStyle="bold"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:layout_below="@id/textView_user_id"/>
+            android:layout_marginTop="20dp" />
 
 
 

@@ -36,9 +36,9 @@
         <androidx.cardview.widget.CardView
             android:layout_width="100dp"
             android:layout_height="100dp"
+            android:layout_centerInParent="true"
             android:layout_gravity="center"
             android:layout_margin="75dp"
-            android:layout_centerInParent="true"
             android:backgroundTint="@color/White"
             app:cardCornerRadius="60dp">
 
