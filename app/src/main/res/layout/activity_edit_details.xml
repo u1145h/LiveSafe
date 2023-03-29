@@ -17,7 +17,7 @@
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:backgroundTint="@color/BlackSPL"
+        android:backgroundTint="@color/White"
         android:layout_marginTop="50dp"
         android:layout_marginBottom="-25dp"
         app:cardCornerRadius="30dp">
@@ -39,7 +39,7 @@
                 android:text="@string/textView_EditDetails"
                 android:fontFamily="@font/poppinsb"
                 android:textAlignment="center"
-                android:textColor="@color/White"
+                android:textColor="@color/BlackSPL"
                 android:textSize="25sp"
                 android:textStyle="bold" />
 
@@ -68,10 +68,10 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="20dp"
-                android:background="@drawable/roundtnwhite"
+                android:background="@drawable/round_button_gradient"
                 android:onClick="update"
                 android:text="Save"
-                android:textColor="@color/BlackSPL"
+                android:textColor="@color/White"
                 android:textSize="20sp" />
 
         </LinearLayout>

@@ -104,7 +104,6 @@ public class UserDetails extends AppCompatActivity {
         cursor.moveToFirst();
         while (cursor.isAfterLast() == false)
         {
-            textView.setText("ABOUT");
             name.setText(cursor.getString(1));
             e_phone.setText(cursor.getString(2));
             cursor.moveToNext();
