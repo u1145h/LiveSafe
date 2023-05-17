@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">The Safety App</string>
+    <string name="app_name">LiveSafe</string>
     <string name="textView_MainActivity">ENTER YOUR DETAILS</string>
     <string name="textView_LoginActivity">Login</string>
     <string name="editDetails">Edit Details</string>
