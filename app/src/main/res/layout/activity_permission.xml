@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_centerInParent="true"
     tools:context=".PermissionActivity">
 
     <LinearLayout
@@ -16,45 +17,54 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_gravity="center"
-            android:layout_height="wrap_content"
-            android:src="@mipmap/ic_launcher"/>
+            android:layout_height="150dp"
+            android:textAlignment="center"
+            android:src="@drawable/img_3"
+            android:layout_marginTop="100dp"/>
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Permission Request"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:text="Welcome!"
             android:layout_gravity="center"
-            android:textSize="24sp"
-            android:layout_marginTop="12dp"
-            android:fontFamily="sans-serif-condensed"
+            android:textAlignment="center"
+            android:textSize="30sp"
+            android:layout_marginTop="30dp"
+            android:fontFamily="@font/poppinsb"
+            android:textColor="@color/BlackSPL"
             android:textStyle="bold"/>
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Please allow the permissions required to run this app."
+            android:layout_width="280dp"
+            android:layout_height="100dp"
+            android:text="This application requires device Location and SMS Permission to work properly"
             android:layout_gravity="center"
-            android:layout_marginTop="30dp"/>
+            android:textAlignment="center"
+            android:textSize="18sp"
+            android:layout_marginTop="12dp"
+            android:fontFamily="@font/poppinsr"
+            android:textStyle="normal"/>
 
 
         <Button
             android:id="@+id/grnt_per"
-            android:layout_width="match_parent"
+            android:layout_width="130dp"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:background="@drawable/round_button_gradient"
             android:textColor="#FFFFFF"
-            android:text="GRANT PERMISSION"
-            android:textStyle="bold"
-            android:textSize="20sp"
-            android:layout_marginTop="150dp"/>
+            android:text="Allow"
+            android:textStyle="normal"
+            android:layout_gravity="center"
+            android:textSize="17sp"
+            android:layout_marginTop="50dp"/>
 
 
     </LinearLayout>
 
 
 
-    <ImageButton
+  <ImageButton
         android:id="@+id/help"
         android:onClick="help"
         android:background="@drawable/ic_help"
@@ -64,15 +74,15 @@
         android:layout_width="50dp"
         android:layout_height="50dp"/>
 
-    <!-- <ImageButton
-        android:id="@+id/imageButton_info"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_alignParentBottom="true"
-        android:layout_marginLeft="5dp"
-        android:layout_marginBottom="4dp"
-        android:background="@drawable/ic_info"
-        android:onClick="info" /> -->
+    <!--<ImageButton
+       android:id="@+id/imageButton_info"
+       android:layout_width="50dp"
+       android:layout_height="50dp"
+       android:layout_alignParentBottom="true"
+       android:layout_marginLeft="5dp"
+       android:layout_marginBottom="4dp"
+       android:background="@drawable/ic_info"
+       android:onClick="info" /> -->
 
 
 </RelativeLayout>
