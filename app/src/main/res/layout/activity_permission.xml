@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/BlackSPL"
     android:layout_centerInParent="true"
     tools:context=".PermissionActivity">
 
@@ -31,13 +32,14 @@
             android:textSize="30sp"
             android:layout_marginTop="30dp"
             android:fontFamily="@font/poppinsb"
-            android:textColor="@color/BlackSPL"
+            android:textColor="@color/White"
             android:textStyle="bold"/>
 
         <TextView
             android:layout_width="280dp"
             android:layout_height="100dp"
             android:text="This application requires device Location and SMS Permission to work properly"
+            android:textColor="@color/White"
             android:layout_gravity="center"
             android:textAlignment="center"
             android:textSize="18sp"
@@ -52,7 +54,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:background="@drawable/round_button_gradient"
-            android:textColor="#FFFFFF"
+            android:textColor="#0f0f0f"
             android:text="Allow"
             android:textStyle="normal"
             android:layout_gravity="center"
@@ -64,15 +66,6 @@
 
 
 
-  <ImageButton
-        android:id="@+id/help"
-        android:onClick="help"
-        android:background="@drawable/ic_help"
-        android:layout_alignParentRight="true"
-        android:layout_marginRight="5dp"
-        android:layout_marginTop="5dp"
-        android:layout_width="50dp"
-        android:layout_height="50dp"/>
 
     <!--<ImageButton
        android:id="@+id/imageButton_info"

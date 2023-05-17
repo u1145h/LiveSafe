@@ -51,7 +51,6 @@ public class PermissionActivity extends AppCompatActivity {
         }
 
 
-        help = (ImageButton)findViewById(R.id.help);
         //info = (ImageButton)findViewById(R.id.imageButton_info);
         grnt_per=(Button)findViewById(R.id.grnt_per);
 
