@@ -4,5 +4,5 @@
     <string name="textView_LoginActivity">Login</string>
     <string name="editDetails">View Details</string>
     <string name="textView_SecondaryActivity">Touch the location icon below to send your location to your emergency contact</string>
-    <string name="textView_EditDetails">EDIT YOUR DETAILS</string>
+    <string name="textView_EditDetails">Enter New Emergency Number</string>
 </resources>

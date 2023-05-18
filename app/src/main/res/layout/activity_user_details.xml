@@ -83,6 +83,7 @@
                 android:background="@drawable/round_white_button"
                 android:textSize="17sp"
                 android:layout_marginTop="20dp"
+                android:paddingTop="3dp"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"/>
 

@@ -10,15 +10,16 @@
 
     <ImageView
         android:layout_width="match_parent"
-        android:layout_height="250dp"
-        android:src="@drawable/img_1" />
+        android:layout_height="300dp"
+        android:layout_marginTop="70dp"
+        android:src="@drawable/editable" />
 
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:backgroundTint="@color/White"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="100dp"
         android:layout_marginBottom="-25dp"
         app:cardCornerRadius="30dp">
 
@@ -31,7 +32,7 @@
 
             <TextView
                 android:id="@+id/textView"
-                android:layout_width="wrap_content"
+                android:layout_width="350dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="40dp"
@@ -64,13 +65,14 @@
 
             <Button
                 android:id="@+id/update"
-                android:layout_width="220dp"
+                android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="20dp"
                 android:background="@drawable/round_white_button"
                 android:onClick="update"
                 android:text="Save"
+                android:paddingTop="3dp"
                 android:fontFamily="@font/poppinsr"
                 android:textColor="@color/White"
                 android:textSize="20sp" />
