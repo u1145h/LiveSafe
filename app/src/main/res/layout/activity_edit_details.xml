@@ -68,9 +68,10 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="20dp"
-                android:background="@drawable/round_button_gradient"
+                android:background="@drawable/round_white_button"
                 android:onClick="update"
                 android:text="Save"
+                android:fontFamily="@font/poppinsr"
                 android:textColor="@color/White"
                 android:textSize="20sp" />
 

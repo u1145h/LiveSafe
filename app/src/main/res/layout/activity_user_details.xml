@@ -74,13 +74,14 @@
             <Button
                 android:id="@+id/edit"
                 android:onClick="edit"
-                android:text="Edit"
+                android:text="EDIT DETAILS"
                 android:textColor="@color/White"
                 android:textAllCaps="false"
                 android:textStyle="bold"
                 android:layout_gravity="center_horizontal"
-                android:background="@drawable/round_button_gradient"
-                android:textSize="20sp"
+                android:fontFamily="@font/poppinsr"
+                android:background="@drawable/round_white_button"
+                android:textSize="17sp"
                 android:layout_marginTop="20dp"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"/>

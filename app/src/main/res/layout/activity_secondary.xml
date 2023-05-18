@@ -10,9 +10,9 @@
 
         <TextView
             android:id="@+id/textView"
-            android:layout_width="300dp"
-            android:layout_height="160dp"
-            android:layout_marginTop="80dp"
+            android:layout_width="3000dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="200dp"
             android:paddingHorizontal="35dp"
             android:layout_centerHorizontal="true"
             android:background="@android:color/transparent"
@@ -27,8 +27,7 @@
         android:id="@+id/ripple_bg"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_centerInParent="true"
-        app:rb_color="@color/textgrey"
+        app:rb_color="@color/White"
         app:rb_radius="32dp"
         app:rb_rippleAmount="4"
         app:rb_scale="6">
@@ -38,7 +37,10 @@
             android:layout_height="100dp"
             android:layout_centerInParent="true"
             android:layout_gravity="center"
-            android:layout_margin="75dp"
+            android:layout_marginStart="75dp"
+            android:layout_marginTop="75dp"
+            android:layout_marginEnd="75dp"
+            android:layout_marginBottom="75dp"
             android:backgroundTint="@color/White"
             app:cardCornerRadius="60dp">
 
@@ -57,7 +59,7 @@
         </androidx.cardview.widget.CardView>
     </com.skyfishjy.library.RippleBackground>
 
-        <Button
+    <Button
             android:id="@+id/imageButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -65,9 +67,9 @@
             android:layout_centerHorizontal="true"
             android:text="@string/editDetails"
             android:fontFamily="@font/poppinsr"
-            android:textSize="13sp"
+            android:textSize="17sp"
             android:paddingHorizontal="20dp"
-            android:layout_marginBottom="150dp"
+            android:layout_marginBottom="200dp"
             android:textColor="@color/BlackSPL"
             android:background="@drawable/roundtnwhite"
             android:onClick="settings" />
