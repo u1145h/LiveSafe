@@ -24,9 +24,9 @@
             <TextView
                 android:id="@+id/dialog_appName"
                 android:text="@string/app_name"
-                android:textColor="@color/green2"
+                android:textColor="@color/BlackSPL"
                 android:textStyle="bold"
-                android:textSize="25dp"
+                android:textSize="30dp"
                 android:gravity="center"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
